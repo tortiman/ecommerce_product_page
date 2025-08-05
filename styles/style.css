@@ -1,0 +1,374 @@
+:root{
+    --Orange: hsl(26, 100%, 55%);
+    --PalePrimaryOrange: hsl(25, 100%, 94%);
+    --VeryNeutraldarkblue: hsl(220, 13%, 13%);
+    --DarkNeutralgrayishblue: hsl(219, 9%, 45%);
+    --GrayishNeutralblue: hsl(220, 14%, 75%);
+    --LightNeutralgrayishblue: hsl(223, 64%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', monospace;
+    display: flex;
+    justify-content: center;
+
+}
+
+main{
+    width: 23.44em;
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 15px;
+    
+}
+.section-article{
+    display: flex;
+    flex-direction: column;
+}
+.menu-logo{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+} 
+
+.menu{
+    width: 16px;
+    height: 15px;
+}
+
+.logo{
+    width: 138px;
+    height: 20px;
+}
+
+.cart-avatar{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cart-icon{
+    width: 22px;
+    height: 20px;
+}
+
+.avatar{
+    width: 1.6em;
+}
+.principal-image{
+    width: 23.43em;
+    position: relative;
+}
+
+.principal-image .principal-img{
+    width: 100%;
+    height: 17.625em;
+    object-fit: cover;
+    
+}
+
+
+.slide-previous{
+    position: absolute;
+    top: 45%;
+    left: 2em;
+    border-radius: 50%;
+    background-color: var(--White);
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-next{
+    position: absolute;
+    top: 45%;
+    right: 2em;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-previous-img{
+    width: 0.7em;
+    cursor: pointer;
+}
+
+.slide-next-img{
+    width: 0.7em;
+    cursor: pointer;
+}
+
+.icon-close{
+    visibility: hidden;
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    z-index: 10;
+}
+
+nav{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--White);
+    z-index: 1;
+}
+
+ul{
+    visibility: hidden;
+    list-style: none;
+    position: absolute;
+    top: 90px;
+    left: 50px;
+    font-size: 1.3em;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.thumbs{
+    visibility: hidden;
+    display: none;
+}
+
+article{
+    padding-top: 25px;
+    padding-right: 23px;
+    padding-left: 23px;
+}
+
+.company{
+    color: var(--DarkNeutralgrayishblue);    
+    letter-spacing: 0.2em;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+h1{
+    font-size: 2em;
+    padding: 20px 0 25px 0;
+}
+
+p{
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--DarkNeutralgrayishblue); 
+}
+
+.previous-price-discount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0 25px 0;
+}
+
+.price-percentaje{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.price{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+input{
+    width: 47px;
+    height: 26px;
+    background-color: var(--Black);
+    color: var(--White);
+    font-size: 0.9em;
+    font-weight: 600;
+    border: none;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.previous{
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--DarkNeutralgrayishblue);
+    text-decoration: line-through;
+}
+
+.quantity-cart-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-cart{
+    width: 329px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--LightNeutralgrayishblue);
+    border-radius: 5px;
+}
+
+.quantity{
+    font-weight: 700;
+}
+
+.cart{
+    width: 329px;
+    height: 52px;
+    border: none;
+    background-color: var(--Orange);
+    color: var(--Black);
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+@media (min-width:48em){
+    main{
+        width: 69.375em;
+        height: auto;
+    }
+
+    header{
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        height: 113px;
+        padding: 42px 0 0 0;
+        border-bottom: 1px solid var(--GrayishNeutralblue);
+    }
+
+    .menu{
+        display: none;
+    }
+
+    ul{
+        visibility: visible;
+        flex-direction: row;
+        left: 400px;
+        font-size: 0.9em;
+        font-weight: 400;
+        color: var(--DarkNeutralgrayishblue);
+
+    }
+
+    .cart-avatar{
+        gap: 30px;
+    }
+
+    .avatar{
+        width: 2.5em;
+    }
+
+    .section-article{
+        flex-direction: row;
+        padding-top: 90px;
+        padding-left: 80px;
+        gap: 125px;
+    }
+
+    .slide-previous{
+        display: none;
+    }
+
+    .slide-next{
+        display: none;
+    }
+
+    .principal-image{
+        width: 27.75em;
+        height: 27.875em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .principal-image .principal-img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+
+    }
+
+    section{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .thumbs{
+        visibility: visible;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .thumbs img{
+        width: 90px;
+        height: 90px;
+        border-radius: 6px;
+    }
+
+    article{
+        padding: 65px 0 0 0;
+    }
+
+    h1{
+        font-size: 2.5em;
+    }
+
+    .previous-price-discount{
+        flex-direction: column;
+        align-items: start;
+        gap: 15px;
+    }
+
+    .quantity-cart-buttons{
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .quantity-cart{
+        width: 40%;
+    }
+
+    .cart{
+        width: 60%;
+        margin: 0;
+    }
+
+}
