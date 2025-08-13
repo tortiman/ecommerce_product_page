@@ -11,16 +11,27 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="./scripts/script.js" defer></script>
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body>
     <main>
       <header>
         <div class="menu-logo">
-          <img src="./images/icon-menu.svg" alt="menu" class="menu" />
+          <img
+            src="./images/icon-menu.svg"
+            alt="menu"
+            id="menuId"
+            class="menu"
+          />
           <img src="./images/logo.svg" alt="logo" class="logo" />
         </div>
-        <img src="./images/icon-close.svg" alt="" class="icon-close" />
+        <img
+          src="./images/icon-close.svg"
+          alt=""
+          id="iconCloseId"
+          class="icon-close"
+        />
         <nav>
           <ul>
             <li>Collections</li>
@@ -31,23 +42,35 @@
           </ul>
         </nav>
         <div class="cart-avatar">
-          <img src="./images/icon-cart.svg" alt="cart" class="cart-icon" />
+          <div class="numberElements" id="numberElementsId"></div>
+          <img
+            src="./images/icon-cart.svg"
+            alt="cart"
+            class="cart-icon"
+            id="cartIconId"
+          />
           <img src="./images/image-avatar.png" alt="avatar" class="avatar" />
         </div>
       </header>
       <div class="section-article">
+        <div class="display-cart" id="displayCartId">
+          <h3 class="title-cart">Cart</h3>
+          <div class="body-cart" id="bodyCartId"></div>
+        </div>
         <section>
           <div class="principal-image">
             <img
               src="./images/image-product-1.jpg"
               alt="product"
               class="principal-img"
+              id="principalImageId"
             />
             <button class="slide-previous">
               <img
                 src="./images/icon-previous.svg"
                 alt="previous"
                 class="slide-previous-img"
+                id="slidePreviousId"
               />
             </button>
             <button class="slide-next">
@@ -55,6 +78,7 @@
                 src="./images/icon-next.svg"
                 alt="next"
                 class="slide-next-img"
+                id="slideNextId"
               />
             </button>
           </div>
@@ -62,18 +86,22 @@
             <img
               src="./images/image-product-1-thumbnail.jpg"
               alt="thumbnail one"
+              id="img1Id"
             />
             <img
               src="./images/image-product-2-thumbnail.jpg"
               alt="thumbnail two"
+              id="img2Id"
             />
             <img
               src="./images/image-product-3-thumbnail.jpg"
               alt="thumbnail three"
+              id="img3Id"
             />
             <img
               src="./images/image-product-4-thumbnail.jpg"
               alt="thumbnail four"
+              id="img4Id"
             />
           </div>
         </section>
@@ -94,12 +122,27 @@
           </div>
           <div class="quantity-cart-buttons">
             <div class="quantity-cart">
-              <img src="./images/icon-minus.svg" alt="minus" />
-              <output class="quantity">0</output>
-              <img src="./images/icon-plus.svg" alt="plus" />
+              <img
+                src="./images/icon-minus.svg"
+                alt="minus"
+                class="minus"
+                id="minusId"
+              />
+              <output class="quantity" id="quantityId">0</output>
+              <img
+                src="./images/icon-plus.svg"
+                alt="plus"
+                class="plus"
+                id="plusId"
+              />
             </div>
-            <button class="cart">
-              <img src="./images/icon-cart.svg" alt="" /> Add to cart
+            <button class="cart" id="cartId">
+              <img
+                src="./images/icon-cart.svg"
+                alt=""
+                class="cart-icon-button"
+              />
+              Add to cart
             </button>
           </div>
         </article>
