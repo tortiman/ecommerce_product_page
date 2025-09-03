@@ -19,8 +19,113 @@ body{
     font-family: 'Kumbh Sans', monospace;
     display: flex;
     justify-content: center;
-
+    height: 100vh;
+    position: relative;
 }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6); 
+    z-index: 1000;
+    visibility: hidden;
+    
+}
+
+
+.container-on {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1100; 
+    visibility: hidden;
+}
+
+.close-over{
+    position: absolute;
+    right: 0;
+    top: -40px;
+    cursor: pointer;
+    filter: grayscale(0) brightness(2);
+}
+
+.close-over:hover{
+    filter: brightness(0) saturate(100%) invert(63%) sepia(98%) saturate(749%) hue-rotate(-7deg) brightness(104%) contrast(101%);
+}
+
+.img-over{
+    /* visibility: hidden; */
+    width: 550px;
+    height: 550px;
+    border-radius: 10px;
+    
+}
+
+.thumbs-over{
+    /* visibility: hidden; */
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 40px;
+}
+
+.thumbs-over img{
+        width: 90px;
+        height: 90px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+
+.slide-previous-over{
+    cursor: pointer;
+}
+
+.slide-previous-over:hover{
+    filter: brightness(0) saturate(100%) invert(63%) sepia(98%) saturate(749%) hue-rotate(-7deg) brightness(104%) contrast(101%);
+}
+
+.slide-next-over{
+    cursor: pointer;
+}
+
+.slide-next-over:hover{
+    filter: brightness(0) saturate(100%) invert(63%) sepia(98%) saturate(749%) hue-rotate(-7deg) brightness(104%) contrast(101%);
+}
+
+
+.slide-previous-btn{
+    position: absolute;
+    top: 40%;
+    left: -20px;
+    border-radius: 50%;
+    background-color: var(--White);
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-next-btn{
+    position: absolute;
+    top: 40%;
+    right: -20px;
+    border-radius: 50%;
+    background-color: var(--White);
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 
 main{
     width: 23.44em;
@@ -119,6 +224,7 @@ header{
 }
 
 .icon-delete{
+    cursor: pointer;
     width: 14px;
     height: 16px;
 }
@@ -377,7 +483,8 @@ input{
     main{
         width: 69.375em;
         height: auto;
-    }
+        
+    }   
 
     header{
         width: 100%;
@@ -471,7 +578,7 @@ input{
         width: 100%;
         height: 100%;
         border-radius: 10px;
-
+        cursor: pointer;
     }
 
     section{
@@ -495,6 +602,10 @@ input{
     }
 
     .thumbs img:hover{
+        filter: opacity(0.4); 
+    }
+
+    .thumbs-over img:hover{
         filter: opacity(0.4); 
     }
 

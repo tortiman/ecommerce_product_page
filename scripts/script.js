@@ -29,6 +29,14 @@ document.addEventListener('DOMContentLoaded',()=>{
     const img3=document.getElementById('img3Id');
     const img4=document.getElementById('img4Id');
 
+
+    // miniaturas superpuestas
+
+    const img1Over=document.getElementById('img1Id-over');
+    const img2Over=document.getElementById('img2Id-over');
+    const img3Over=document.getElementById('img3Id-over');
+    const img4Over=document.getElementById('img4Id-over');
+
     // incrementar y decrementar elementos
     const minus=document.getElementById('minusId');
     const quantity=document.getElementById('quantityId');
@@ -60,7 +68,6 @@ document.addEventListener('DOMContentLoaded',()=>{
         const numberPrincipalImage=parseInt(srcPrincipalImage[srcPrincipalImage.length-5]);
         let pathImage='./images/image-product-';
         let endTextImg='';
-        const newSrc='';
         let nextNumber=0;
         if(numberPrincipalImage<4 && numberPrincipalImage>=1){
             nextNumber=numberPrincipalImage + 1;
@@ -79,7 +86,6 @@ document.addEventListener('DOMContentLoaded',()=>{
         const numberPrincipalImage=parseInt(srcPrincipalImage[srcPrincipalImage.length-5]);
         let pathImage='./images/image-product-';
         let endTextImg='';
-        const newSrc='';
         let previousNumber=0;
         if(numberPrincipalImage>1 && numberPrincipalImage<=4){
             previousNumber=numberPrincipalImage-1;
@@ -236,4 +242,124 @@ document.addEventListener('DOMContentLoaded',()=>{
         principalImage.setAttribute('src','./images/image-product-4.jpg');
     });
 
+    // funcionalidad a la imagen en superposicion, miniaturas y botones de deslizamiento
+
+    // al hacer click en la imagen principal principalImageId se debe oscurecer la parte inferior, mostrar class=container-on y imagen correspondiente
+
+    function searchPrincipalImage(){
+        let image='';
+        const srcPrincipalImage=principalImage.getAttribute('src');
+        image=srcPrincipalImage;
+        return image;
+    }
+
+    const containerOn=document.querySelector('.container-on');
+    const imgOver=document.querySelector('.img-over'); // imagen principal que se superpone
+    closeOver=document.querySelector('.close-over');
+    const overlay=document.getElementById('overlayId');
+
+    principalImage.addEventListener('click',()=>{
+        containerOn.style.visibility='visible'; // se hace la superposicion visible
+        // se busca la imagen que esta en principalImageId y pone la imagen en imgOver
+        imgOver.setAttribute('src',searchPrincipalImage());
+
+        // darle borde a la miniatura y sombreo
+
+
+
+        // IMPLEMENTAR EL OSCURECIMIENTO
+        overlay.style.visibility='visible';
+
+    });
+
+    // al hacer click en la class=close-over se debe ocultar container-on
+
+
+
+    closeOver.addEventListener('click', ()=>{
+        containerOn.style.visibility='hidden';
+        overlay.style.visibility='hidden';
+    });
+
+    // deslizamiento de las imagenes al pulsar slide-previous-btn y slide-next-btn
+
+    const slidePreviousBtn=document.querySelector('.slide-previous-over');
+    const slideNextBtn=document.querySelector('.slide-next-over');
+    
+    slidePreviousBtn.addEventListener('click', ()=>{
+        const srcImgOver=imgOver.getAttribute('src');
+        const numberPrincipalImage=parseInt(srcImgOver[srcImgOver.length-5]);
+        let pathImage='./images/image-product-';
+        let endTextImg='';
+        const newSrc='';
+        let previousNumber=0;
+        if(numberPrincipalImage>1 && numberPrincipalImage<=4){
+            previousNumber=numberPrincipalImage-1;
+            endTextImg=previousNumber+'.jpg';
+            pathImage=pathImage+endTextImg;
+            imgOver.setAttribute('src',pathImage);
+        }else{
+            imgOver.setAttribute('src','./images/image-product-4.jpg');
+        }
+    });
+
+    slideNextBtn.addEventListener('click', ()=>{
+        const srcImgOver=imgOver.getAttribute('src');
+        const numberPrincipalImage=parseInt(srcImgOver[srcImgOver.length-5]);
+        let pathImage='./images/image-product-';
+        let endTextImg='';
+        const newSrc='';
+        let nextNumber=0;
+        if(numberPrincipalImage<4 && numberPrincipalImage>=1){
+            nextNumber=numberPrincipalImage + 1;
+            endTextImg=nextNumber+'.jpg';
+            pathImage=pathImage+endTextImg;
+            // console.log(pathImage);
+            imgOver.setAttribute('src',pathImage);
+        }else{
+            imgOver.setAttribute('src','./images/image-product-1.jpg');
+        }
+    });
+
+
+
+    // Mostrar en imgOver la miniatura que se clika, dandole borde naranja a la miniatura y opacidad a la miniatura
+
+    img1Over.addEventListener('click', ()=>{
+        img2Over.style.border='none';
+        img3Over.style.border='none';
+        img4Over.style.border='none';
+        img1Over.style.border='2px solid hsl(26, 100%, 55%)';
+        imgOver.setAttribute('src','./images/image-product-1.jpg');
+    });
+
+    img2Over.addEventListener('click', ()=>{
+        img1Over.style.border='none';
+        img3Over.style.border='none';
+        img4Over.style.border='none';
+        img2Over.style.border='2px solid hsl(26, 100%, 55%)';
+        imgOver.setAttribute('src','./images/image-product-2.jpg');
+    });
+
+    img3Over.addEventListener('click', ()=>{
+        img1Over.style.border='none';
+        img2Over.style.border='none';
+        img4Over.style.border='none';
+        img3Over.style.border='2px solid hsl(26, 100%, 55%)';
+        imgOver.setAttribute('src','./images/image-product-3.jpg');
+    });
+
+    img4Over.addEventListener('click', ()=>{
+        img1Over.style.border='none';
+        img2Over.style.border='none';
+        img3Over.style.border='none';
+        img4Over.style.border='2px solid hsl(26, 100%, 55%)';
+        imgOver.setAttribute('src','./images/image-product-4.jpg');
+    });
+
+
+    
+
+    
+    
 });
