@@ -263,10 +263,6 @@ document.addEventListener('DOMContentLoaded',()=>{
         // se busca la imagen que esta en principalImageId y pone la imagen en imgOver
         imgOver.setAttribute('src',searchPrincipalImage());
 
-        // darle borde a la miniatura y sombreo
-
-
-
         // IMPLEMENTAR EL OSCURECIMIENTO
         overlay.style.visibility='visible';
 
